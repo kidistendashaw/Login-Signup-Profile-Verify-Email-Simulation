@@ -10,8 +10,9 @@ const Signup: React.FC = () => {
 
   const handleSignup = () => {
     if (name && email && password) {
-      setMessage("Signup successful! Go to login.");
-      setTimeout(() => navigate("/login"), 1500);
+      const user = { name, email, password, verified: false };
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate(`/verify-email/${email}`);
     } else {
       setMessage("Please fill all fields.");
     }

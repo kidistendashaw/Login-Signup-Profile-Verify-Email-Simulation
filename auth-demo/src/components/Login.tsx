@@ -17,29 +17,31 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-sm mx-auto">
-      <h2 className="text-xl font-bold mb-4">Login</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="border p-2 w-full mb-2"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="border p-2 w-full mb-2"
-      />
-      {error && <p className="text-red-500">{error}</p>}
-      <button
-        onClick={handleLogin}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
-        Login
-      </button>
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="p-8 max-w-sm mx-auto bg-amber-600 -center">
+        <h2 className="text-xl font-bold mb-4">Login</h2>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border p-2 w-full mb-2"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="border p-2 w-full mb-2"
+        />
+        {error && <p className="text-blue-500">{error}</p>}
+        <button
+          onClick={handleLogin}
+          className="bg-black text-white px-4 py-2 rounded"
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 };
